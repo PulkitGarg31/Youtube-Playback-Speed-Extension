@@ -1,0 +1,33 @@
+{
+  "manifest_version": 3,
+  "name": "YouTube Speed Controller",
+  "version": "1.0",
+  "description": "Set YouTube playback speed according to your convenience.",
+  "permissions": [
+    "scripting",
+    "tabs",
+    "activeTab"
+  ],
+  "host_permissions": [
+    "https://www.youtube.com/*"
+  ],
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "icon16.png"
+    },
+    "default_title": "YouTube Speed Controller"
+  },
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://www.youtube.com/*"],
+      "js": ["content.js"]
+    }
+  ],
+  "icons": {
+    "16": "icon16.png"
+  }
+}
